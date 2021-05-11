@@ -4,7 +4,7 @@ const mergeSort = require('./mergeSort');
 describe('MERGE SORT ALGORITHM', () => {
   describe('mergeTwoSortedArrays function', () => {
     test('should return an empty array if both input arrays are empty', () => {
-      expect(mergeSort.mergeSortRecursive([], [])).toStrictEqual([]);
+      expect(mergeSort.mergeTwoSortedArrays([], [])).toStrictEqual([]);
     });
     test('should merge two sorted arrays when array 1 is empty and array 2 is full', () => {
       const actual = mergeSort.mergeTwoSortedArrays([], [1, 2, 3, 4, 5]);
@@ -25,7 +25,7 @@ describe('MERGE SORT ALGORITHM', () => {
     });
     test('should merge two sorted arrays that are the same length', () => {
       const actual = mergeSort.mergeTwoSortedArrays([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]);
-      const expected = [1, 2, 3, 4, 5, 6, 7];
+      const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       expect(actual).toStrictEqual(expected);
     });
   });
