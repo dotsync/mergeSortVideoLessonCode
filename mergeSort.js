@@ -25,8 +25,15 @@ function mergeTwoSortedArrays(array1, array2) {
   return result;
 }
 
-function mergeSortRecursive() {
-
+function mergeSortRecursive(unsortedArray) {
+  // base case
+  if (unsortedArray.length <= 1) return unsortedArray;
+  // recursive steps
+  // create a mid point, left side and right side
+  const mid = Math.floor(unsortedArray.length / 2);
+  const leftHalf = mergeSortRecursive(unsortedArray.slice(0, mid));
+  const rightHalf = mergeSortRecursive(unsortedArray.slice(mid));
+  return mergeTwoSortedArrays(leftHalf, rightHalf);
 }
 
 module.exports = {
